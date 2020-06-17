@@ -115,6 +115,27 @@ void Record::getService(int variant)
     }
 }
 
+int Record::idValid()
+{
+    int input = -1;
+    bool valid = false;
+    do
+    {
+        cin >> input;
+        if (cin.good())
+        {
+            valid = true;
+        }
+        else
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "   Помилка вводу. Введіть ще раз" << endl;
+        }
+    } while (!valid);
+    return input;
+}
+
 int Record::getWorker()
 {
     Worker worker;
@@ -127,7 +148,7 @@ int Record::getWorker()
     while (ok != 1)
     {
         cout << "   Введіть id працівника: ";
-        cin >> id;
+       id= idValid();
         for (int i = 0; i < worker.count(); i++)
         {
             ifile.seekg(i * sizeof(Worker));

@@ -29,5 +29,6 @@ public:
 	int getWorker();
 	void setService();
 	void getService(int);
+	int idValid();
 };
 
