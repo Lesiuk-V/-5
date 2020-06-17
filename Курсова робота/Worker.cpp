@@ -138,16 +138,16 @@ void Worker::getPosition(int variant)
     switch (variant)
     {
     case 1:
-        cout << "   Послуги перукаря\n";
+        cout << "   Перукар\n";
         break;
     case 2:
-        cout << "   Манікюр та педикюр\n";
+        cout << "   Майстер манікюру\n";
         break;
     case 3:
-        cout << "   Послуги візажиста\n";
+        cout << "   Візажист\n";
         break;
     case 4:
-        cout << "   Косметологічні процедури\n";
+        cout << "   Косметолог\n";
         break;
     default:
         cout << "unknow\n";
@@ -287,6 +287,7 @@ void Worker::editData()
 
         else
         {
+            worker.showData();
             worker.create(worker.id);
             temp.write(reinterpret_cast<char*>(&worker), sizeof(Worker));
             edit = true;

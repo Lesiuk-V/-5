@@ -339,6 +339,7 @@ void Record::editData()
 
         else
         {
+            record.showData();
             record.create(record.id);
             temp.write(reinterpret_cast<char*>(&record), sizeof(Record));
             edit = true;
