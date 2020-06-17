@@ -212,6 +212,12 @@ int Worker::search(int variant)
                 worker.showData();
             }
             break;
+        case 7:
+            if (0 == strcmp(str, worker.phone))
+            {
+                worker.showData();
+            }
+            break;
         default:
             cout << "   Помилка вводу. Введіть ще раз\n";
             break;

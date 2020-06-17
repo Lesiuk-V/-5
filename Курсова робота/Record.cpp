@@ -216,7 +216,7 @@ int Record::search(int variant)
     ifile.seekg(0);
     cout << "\n    ¬вед≥ть дан≥ дл€ пошуку: ";
     cin >> str;
-    for (int i = 0; i < count(); i++)
+    for (int i = 0; i < Record::count(); i++)
     {
         ifile.seekg(i * sizeof(Record));
         ifile.read(reinterpret_cast<char*>(&record), sizeof(Record));
@@ -255,12 +255,13 @@ int Record::search(int variant)
             }
             break;
         case 6:
-            if ((int)str == record.idWorker)
+            if (atoi(str) == record.idWorker)
             {
                 record.showData();
             }
+            break;
         case 7:
-            if ((int)str == record.id)
+            if (atoi(str) == record.id)
             {
                 record.showData();
             }

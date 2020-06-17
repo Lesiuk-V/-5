@@ -2,7 +2,7 @@
 #include "Human.h"
 enum Position
 {
-    hairdresser,
+    hairdresser=1,
     masterOfManicure,
     MakeUpArtist,
     beautician
